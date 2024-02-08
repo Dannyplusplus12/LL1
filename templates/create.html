@@ -5,6 +5,7 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animate.css') }}">
 <body>
     <div class="app abg">
         <div class="logo">
@@ -19,7 +20,7 @@
                 <div class="cc" id="to">
                     <img src="../static/img/o-1.png" alt="" srcset="">
                     <div>
-                        <button type="button" class="to o-btn">Gia đình</button>
+                        <button type="button" class="selected to o-btn">Gia đình</button>
                         <button type="button" class="to o-btn">Bạn bè</button>
                     </div>
                 </div>
@@ -29,7 +30,7 @@
                 <div class="cc" id="ty">
                     <img src="../static/img/o-2.png" alt="" srcset="">
                     <div>
-                        <button type="button" class="ty o-btn">Sự nghiệp</button>
+                        <button type="button" class="selected ty o-btn">Sự nghiệp</button>
                         <button type="button" class="ty o-btn">Học vấn</button>
                         <button type="button" class="ty o-btn">Sức khoẻ</button>
                         <button type="button" class="ty o-btn">Tài lộc</button>
@@ -43,13 +44,50 @@
 
                 <div class="cc" id="bg">
                     <img src="../static/img/o-2.png" alt="" srcset="">
-                    <div>
-                        <button type="button" class="bg o-btn">Loại 1</button>
-                        <button type="button" class="bg o-btn">Loại 2</button>
-                        <button type="button" class="bg o-btn">Loại 3</button>
-                        <button type="button" class="bg o-btn">Loại 4</button>
-                        <button type="button" class="bg o-btn">Loại 5</button>
-                            
+                    <div">
+                        <div class="slider">
+                            <div class="slider-wrapper">
+                                <div class="pre">
+                                    <svg width="32px" height="32px" viewBox="0 0 24 24" fill="#850000" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.2929 15.2893C18.6834 14.8988 18.6834 14.2656 18.2929 13.8751L13.4007 8.98766C12.6195 8.20726 11.3537 8.20757 10.5729 8.98835L5.68257 13.8787C5.29205 14.2692 5.29205 14.9024 5.68257 15.2929C6.0731 15.6835 6.70626 15.6835 7.09679 15.2929L11.2824 11.1073C11.673 10.7168 12.3061 10.7168 12.6966 11.1073L16.8787 15.2893C17.2692 15.6798 17.9024 15.6798 18.2929 15.2893Z" fill="#850000"/>
+                                    </svg>
+                                </div>
+                                <div class="wrapper">
+                                    <video  class="v-hide" autoplay='autoplay' loop>
+                                        <source src="../static/video/bg/0.mp4" type="video/mp4">
+                                    </video>
+                                    <video  class="v-hide" autoplay='autoplay' loop>
+                                        <source src="../static/video/bg/1.mp4" type="video/mp4">
+                                    </video>
+                                    <video  class="v-hide" autoplay='autoplay' loop>
+                                        <source src="../static/video/bg/2.mp4" type="video/mp4">
+                                    </video>
+                                    <video  class="v-hide" autoplay='autoplay' loop>
+                                        <source src="../static/video/bg/3.mp4" type="video/mp4">
+                                    </video>
+                                    <video  class="v-hide" autoplay='autoplay' loop>
+                                        <source src="../static/video/bg/4.mp4" type="video/mp4">
+                                    </video>
+                                    <video style="position: relative; opacity: 0;">
+                                        <source src="../static/video/bg/0.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="nex">
+                                    <svg width="32px" height="32px" viewBox="0 0 24 24" fill="#850000" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.2929 15.2893C18.6834 14.8988 18.6834 14.2656 18.2929 13.8751L13.4007 8.98766C12.6195 8.20726 11.3537 8.20757 10.5729 8.98835L5.68257 13.8787C5.29205 14.2692 5.29205 14.9024 5.68257 15.2929C6.0731 15.6835 6.70626 15.6835 7.09679 15.2929L11.2824 11.1073C11.673 10.7168 12.3061 10.7168 12.6966 11.1073L16.8787 15.2893C17.2692 15.6798 17.9024 15.6798 18.2929 15.2893Z" fill="#850000"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="list">
+                                <div class="list-wrapper">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
     
@@ -58,7 +96,7 @@
                 <div class="cc" id="st">
                     <img src="../static/img/o-3.png" alt="" srcset="">
                     <div>
-                        <button type="button" class="st o-btn s-btn">
+                        <button type="button" class="selected st o-btn s-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#850000" version="1.1" id="Capa_1" width="2rem" height="2rem" viewBox="0 0 163.861 163.861" xml:space="preserve"><g><path d="M34.857,3.613C20.084-4.861,8.107,2.081,8.107,19.106v125.637c0,17.042,11.977,23.975,26.75,15.509L144.67,97.275   c14.778-8.477,14.778-22.211,0-30.686L34.857,3.613z"/></g></svg>
                             <svg class="hide" xmlns="http://www.w3.org/2000/svg" fill="#850000" width="2rem" height="2rem" viewBox="0 0 24 24"><path d="M13,4V20a1,1,0,0,1-2,0V4a1,1,0,0,1,2,0ZM8,5A1,1,0,0,0,7,6V18a1,1,0,0,0,2,0V6A1,1,0,0,0,8,5ZM4,7A1,1,0,0,0,3,8v8a1,1,0,0,0,2,0V8A1,1,0,0,0,4,7ZM16,5a1,1,0,0,0-1,1V18a1,1,0,0,0,2,0V6A1,1,0,0,0,16,5Zm4,2a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V8A1,1,0,0,0,20,7Z"/></svg>
                             Âm thanh 1

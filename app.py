@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 
 import os
 import asyncio
+from random import randrange
 from moviepy.editor import VideoFileClip, clips_array, vfx
 import moviepy.editor as me
 
@@ -20,17 +21,14 @@ def choose():
 
 @app.route('/create', methods=['POST', 'GET'])
 def create():
-
     return render_template('create.html')
 
 @app.route('/random', methods=['POST', 'GET'])
 def random():
-
     return render_template('random.html')
 
 @app.route('/lgh')
 def lgh():
-
     return ['LGH' for x in range(1000)]
 
 
@@ -39,16 +37,15 @@ def dowload(name):
     if request.method == 'GET':
         return send_from_directory(directory='static', path=f"video/{name}.mp4", as_attachment=True)
 
-@app.route('/pv', methods=['GET', 'POST'])
-def pv():
-    # if request.method == 'POST':
-    #     data = request.json
-    #     video_name = str(data['bg'] + 1) + str(data['ef'] + 1)
+@app.route('/pv/<video_name>', methods=['GET', 'POST'])
+def pv(video_name):
 
-    return render_template('pv.html')
+    return render_template('pv.html', video_name=video_name)
+        
+                    
 
-# if __name__ == '__main__':
-    # app.run(host='0.0.0.0', debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
 
 # UPLOAD_FOLDER = 'static/uploads/'
 # @app.route('/upload', methods=['POST', 'GET'])

@@ -7,11 +7,11 @@ for(let index = 0; index < 8; ++index) {
     console.log(s_btn[index].children[0])
     s_btn[index].addEventListener('click', () => {
         for(let i = 0; i < 8; ++i) {
-            s_btn[i].children[0].classList.remove('v-hide')
-            s_btn[i].children[1].classList.add('v-hide')
+            s_btn[i].children[0].classList.remove('hide')
+            s_btn[i].children[1].classList.add('hide')
         }
-        s_btn[index].children[0].classList.add('v-hide')
-        s_btn[index].children[1].classList.remove('v-hide')
+        s_btn[index].children[0].classList.add('hide')
+        s_btn[index].children[1].classList.remove('hide')
         
         
         try {
@@ -71,10 +71,13 @@ for(let index = 0; index < st_btn.length; ++index) {
                 st_btn[i].classList.add('selected')
             }
         }
-        window.location.href = "#create_btn"
     })
 }
 
+
+function rd(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+}
 
 function create_() {
     let video_name = ''
@@ -110,6 +113,7 @@ function create_() {
 
 }
 document.getElementById('create_btn').addEventListener('click', create_)
+
 
 
 
@@ -197,3 +201,25 @@ document.querySelector('.pre').addEventListener('click', ()=>{
         }
     }
 })
+
+
+function isElementOnScreen(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    return rect.bottom >= 0 && rect.top <= windowHeight;
+}
+
+
+const animate = () => {
+    ani = document.querySelectorAll('.animate__animated')
+    for(let i = 0; i < ani.length; ++i) {
+        if(isElementOnScreen(ani[i])) {
+            ani[i].classList.add('animate__bounceIn')
+            // ani[i].classList.add('animate__delay-2s')
+        }
+    }
+}
+
+window.onload = animate;
+document.addEventListener('scroll', animate)
+

@@ -4,10 +4,15 @@
     margin: 0;
 }
 
+
 /* @font-face {
     font-family: Pangolin;
     src: url(./fonts/Pangolin/Pangolin-Regular.ttf);
 } */
+:root {
+    --animate-delay: 0.2s !important;
+}
+
 
 @font-face {
     font-family: Sansita;

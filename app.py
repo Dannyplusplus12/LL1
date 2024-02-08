@@ -31,6 +31,9 @@ def random():
 def lgh():
     return ['LGH' for x in range(1000)]
 
+@app.route('/tetris')
+def tetris():
+    return render_template('tetris.html')
 
 @app.route('/dowload/<name>', methods=['GET'])
 def dowload(name):
